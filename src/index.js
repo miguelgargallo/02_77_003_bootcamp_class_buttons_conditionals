@@ -7,6 +7,8 @@ const WarningNotUse = () => {
 };
 
 const ListOfClicks = ({ clicks }) => {
+  console.log({ clicks });
+  debugger;
   return <p>{clicks.join(", ")}</p>;
 };
 

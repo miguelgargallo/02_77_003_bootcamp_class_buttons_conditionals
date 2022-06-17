@@ -9,13 +9,14 @@ const App = () => {
   const [counters, setCounters] = useState({
     left: 0,
     right: 0,
-    clicks: 0
+    clicks: 0,
+    mensaje: "Mensaje en el estado"
   });
 
   const handleClickLeft = () => {
     const newCountersState = {
+      ...counters,
       left: counters.left + 1,
-      right: counters.right,
       clicks: counters.clicks + 1
     };
     setCounters(newCountersState);
@@ -23,7 +24,7 @@ const App = () => {
 
   const handleClickRight = () => {
     setCounters({
-      left: counters.left,
+      ...counters,
       right: counters.right + 1,
       clicks: counters.clicks + 1
     });
@@ -35,8 +36,8 @@ const App = () => {
       <button onClick={handleClickLeft}>left</button>
       <button onClick={handleClickRight}>right</button>
       {counters.right}
-      <p>Clicks totales</p>
-      <span>{counters.clicks}</span>
+      <p>Clicks totales {counters.clicks}</p>
+      <p>{counters.mensaje}</p>
     </div>
   );
 };

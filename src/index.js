@@ -21,9 +21,7 @@ const App = () => {
       clicks: counters.clicks + 1
     };
     setCounters(newCountersState);
-    setClicks((prevClicks) => {
-      return [...prevClicks, "L"];
-    });
+    setClicks((prevClicks) => [...prevClicks, "L"]);
   };
 
   const handleClickRight = () => {

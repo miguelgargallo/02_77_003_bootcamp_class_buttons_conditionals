@@ -12,10 +12,11 @@ const App = () => {
   });
 
   const handleClickLeft = () => {
-    setCounters({
+    const newCountersState = {
       left: counters.left + 1,
       right: counters.right
-    });
+    };
+    setCounters(newCountersState);
   };
 
   const handleClickRight = () => {
@@ -28,8 +29,8 @@ const App = () => {
   return (
     <div>
       {counters.left}
-      <button onClick={handleClickLeft}>🇦🇩</button>
-      <button onClick={handleClickRight}>🇺🇸</button>
+      <button onClick={handleClickLeft}>left</button>
+      <button onClick={handleClickRight}>right</button>
       {counters.right}
     </div>
   );

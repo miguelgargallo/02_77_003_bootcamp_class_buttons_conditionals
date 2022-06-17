@@ -40,7 +40,7 @@ const App = () => {
       <button onClick={handleClickRight}>right</button>
       {counters.right}
       <p>Clicks totales {counters.clicks}</p>
-      {clicks}
+      {clicks.join(", ")}
     </div>
   );
 };

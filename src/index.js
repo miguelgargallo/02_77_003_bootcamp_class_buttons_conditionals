@@ -6,15 +6,13 @@ const WarningNotUse = () => {
   return <h1>Todavía no se ha usado el contador</h1>;
 };
 
-const ListOfClicks = ({ clicks }) => {
-  console.log({ clicks });
-  debugger;
-  return <p>{clicks.join(", ")}</p>;
-};
-
 const App = () => {
   //  const [left, setLeft] = useState(10);
   //  const [right, setRight] = useState(20);
+
+  const ListOfClicks = ({ clicks }) => {
+    return <p>{clicks.join(", ")}</p>;
+  };
 
   const [counters, setCounters] = useState({
     left: 0,
@@ -23,7 +21,7 @@ const App = () => {
   });
   const [clicks, setClicks] = useState([]);
 
-  const handleClickLeft = () => {
+  const handleClickLeft = (event) => {
     const newCountersState = {
       ...counters,
       left: counters.left + 1

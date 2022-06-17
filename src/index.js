@@ -28,8 +28,8 @@ const App = () => {
     setClicks([]);
   };
 
-  const left = clicks.filter((clicks) => clicks === "L");
-  const right = clicks.filter((clicks) => clicks != "L");
+  const left = clicks.filter((click) => click === "L");
+  const right = clicks.filter((click) => click === "R");
 
   return (
     <div>

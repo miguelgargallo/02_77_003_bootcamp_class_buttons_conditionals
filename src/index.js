@@ -30,6 +30,7 @@ const App = () => {
       right: counters.right + 1,
       clicks: counters.clicks + 1
     });
+    setClicks((prevClicks) => [...prevClicks, "R"]);
   };
 
   return (
@@ -39,7 +40,7 @@ const App = () => {
       <button onClick={handleClickRight}>right</button>
       {counters.right}
       <p>Clicks totales {counters.clicks}</p>
-      <p>{counters.mensaje}</p>
+      {clicks}
     </div>
   );
 };

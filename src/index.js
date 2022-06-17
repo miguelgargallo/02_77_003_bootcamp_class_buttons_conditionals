@@ -6,12 +6,6 @@ const WarningNotUse = () => {
   return <h1>Todavía no se ha usado el contador</h1>;
 };
 
-const INITIAL_COUNTER_STATE = {
-  left: 2,
-  right: 4,
-  mensaje: "Mensasasasd"
-};
-
 const App = () => {
   //  const [left, setLeft] = useState(10);
   //  const [right, setRight] = useState(20);
@@ -20,37 +14,29 @@ const App = () => {
     return <p>{clicks.join(", ")}</p>;
   };
 
-  const [counters, setCounters] = useState(INITIAL_COUNTER_STATE);
   const [clicks, setClicks] = useState([]);
-  const handleClickLeft = (event) => {
-    const newCountersState = {
-      ...counters,
-      left: counters.left + 1
-    };
 
-    setCounters(newCountersState);
+  const handleClickLeft = (event) => {
     setClicks((prevClicks) => [...prevClicks, "L"]);
   };
 
   const handleClickRight = () => {
-    setCounters({
-      ...counters,
-      right: counters.right + 1
-    });
     setClicks((prevClicks) => [...prevClicks, "R"]);
   };
 
   const handleReset = () => {
-    setCounters(INITIAL_COUNTER_STATE);
     setClicks([]);
   };
 
+  const left = clicks.filter((clicks) => clicks === "L");
+  const right = clicks.filter((clicks) => clicks != "L");
+
   return (
     <div>
-      {counters.left}
+      {left.length}
       <button onClick={handleClickLeft}>left</button>
       <button onClick={handleClickRight}>right</button>
-      {counters.right}
+      {right.length}
       <p>
         <button onClick={handleReset}>Reset</button>
       </p>

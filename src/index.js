@@ -6,18 +6,18 @@ const WarningNotUse = () => {
   return <h1>Todavía no se ha usado el contador</h1>;
 };
 
+const INITIAL_COUNTER_STATE = {
+  left: 2,
+  right: 4,
+  mensaje: "Mensasasasd"
+};
+
 const App = () => {
   //  const [left, setLeft] = useState(10);
   //  const [right, setRight] = useState(20);
 
   const ListOfClicks = ({ clicks }) => {
     return <p>{clicks.join(", ")}</p>;
-  };
-
-  const INITIAL_COUNTER_STATE = {
-    left: 2,
-    right: 4,
-    mensaje: "Mensasasasd"
   };
 
   const [counters, setCounters] = useState(INITIAL_COUNTER_STATE);

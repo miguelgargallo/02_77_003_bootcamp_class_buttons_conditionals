@@ -22,7 +22,7 @@ const App = () => {
     };
     setCounters(newCountersState);
     setClicks((prevClicks) => {
-      return prevClicks.concat("L");
+      return [...prevClicks, "L"];
     });
   };
 

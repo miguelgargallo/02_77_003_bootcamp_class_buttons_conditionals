@@ -47,11 +47,14 @@ const App = () => {
       <button onClick={handleClickRight}>right</button>
       {counters.right}
       <p>Clicks totales: {clicks.length}</p>
-      {clicks.join(", ")}
+      {clicks.length === 0 ? (
+        <WarningNotUse />
+      ) : (
+        <ListOfClicks clicks={clicks} />
+      )}
     </div>
   );
 };
-
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(<App />, rootElement);

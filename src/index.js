@@ -17,9 +17,9 @@ const App = () => {
   const handleClickLeft = () => {
     const newCountersState = {
       ...counters,
-      left: counters.left + 1,
-      clicks: counters.clicks + 1
+      left: counters.left + 1
     };
+
     setCounters(newCountersState);
     setClicks((prevClicks) => [...prevClicks, "L"]);
   };
@@ -27,9 +27,9 @@ const App = () => {
   const handleClickRight = () => {
     setCounters({
       ...counters,
-      right: counters.right + 1,
-      clicks: counters.clicks + 1
+      right: counters.right + 1
     });
+
     setClicks((prevClicks) => [...prevClicks, "R"]);
   };
 
@@ -39,7 +39,7 @@ const App = () => {
       <button onClick={handleClickLeft}>left</button>
       <button onClick={handleClickRight}>right</button>
       {counters.right}
-      <p>Clicks totales {counters.clicks}</p>
+      <p>Clicks totales: {clicks.length}</p>
       {clicks.join(", ")}
     </div>
   );
